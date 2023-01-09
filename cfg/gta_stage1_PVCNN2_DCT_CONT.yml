@@ -1,0 +1,40 @@
+# action to dec
+dataset: GTA
+model_name: PVCNN2_DCT_CONT
+model_specs:
+  input_dim: 63
+  aux_dim: 0 # auxilliary data 10 beta + 1 gender
+  point_feat: 2048
+  nh_rnn: 128
+  nz: 128
+  nk: 1
+  rnn_type: gru
+  x_birnn: false
+  is_bn: true
+  dct_n: 20
+  lambdas: [ 1.0,   500.0]
+  sa_blocks: [[[64, 2, 32], [1024, 0.1, 32, [64, 128]]],
+              [[128, 2, 16], [256, 0.2, 32, [128, 128]]],
+              [[128, 2, 8], [64, 0.4, 32, [128, 256]]],
+              [[], [16, 0.8, 32, [256, 256, 512]]]]
+  fp_blocks: [[[256, 256], [256, 1, 8]],
+              [[256, 256], [256, 1, 8]],
+              [[256, 128], [128, 2, 16]],
+              [[128, 128, 64], [64, 1, 32]]]
+
+dataset_specs:
+  t_his: 30
+  t_pred: 60
+#  data_file: /home/wei/Documents/1T/GTA-IM-Dataset/data_v2_downsample0.05/
+  data_file: /home/wei/Documents/1T/GTA-IM-Dataset/data_v2_downsample0.02/
+  random_rot: true
+  max_dist_from_human: 2.5
+  num_scene_points: 20000
+  step: 5
+  sigma: 0.2
+
+lr: 1.e-3
+batch_size: 4 #32
+num_epoch: 1
+num_epoch_fix: 1
+save_model_interval: 1
