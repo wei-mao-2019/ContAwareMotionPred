@@ -26,7 +26,8 @@ class DatasetGTA(Dataset):
         self.data_file = data_file = dataset_specs.get('data_file', '/home/wei/Documents/projects/2021-human-scene-intraction/scene-aware-motion-prediction/data/GTA')
         self.scene_split = {'train': ['r001','r002','r003', 'r006'],
 
-                            'test': ['r010', 'r011', 'r013']
+                            #'test': ['r010', 'r011', 'r013'],
+                            'test': ['r010', 'r003', 'r013']
                             }
         self.pose = {}
         self.scene = {}
