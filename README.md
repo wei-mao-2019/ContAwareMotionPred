@@ -10,6 +10,7 @@ Wei Mao, Miaomiao Liu, Richard Hartley, Mathieu Salzmann.
 
 ### Dependencies
 * Python >= 3.8
+* Open3D >= 0.15.0
 * [PyTorch](https://pytorch.org) >= 1.8
 * Tensorboard
 * numba
@@ -20,7 +21,7 @@ tested on pytorch == 1.8.1
 #### GTM-IM
 For the original dataset please contact the authors of [Long-term Human Motion Prediction with Scene Context](https://zhec.github.io/hmp/).
 
-* Data pre-process, after downloads the original GTA-IM Dataset (the FPS-30), unzip every file and put it in the data foloder. Run the code below to process the dataset. 
+* *Data pre-process*. After downloading the original GTA-IM Dataset (the FPS-30 one), unzip every file and put it in the data foloder. Run the code below to process the dataset. 
 
 ```
 python process_gta_dataset.py
